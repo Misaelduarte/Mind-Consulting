@@ -42,7 +42,7 @@
   <label class="col-sm-2 col-form-label">CPF</label>
 
       <div class="col-sm-10">
-        <input type="text" name="cpf" value="{{ $user->cpf }}" class="form-control @error('cpf') is-invalid @enderror" disabled>
+        <input type="text" name="cpf" value="{{ $user->cpf }}" class="form-control @error('cpf') is-invalid @enderror">
       </div>
 </div>
 <div class="form-group row">

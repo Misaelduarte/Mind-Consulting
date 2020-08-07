@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
+        $users = User::paginate(6);
         
         return view('admin.users.index', [
             'users' => $users
@@ -53,13 +53,11 @@ class UserController extends Controller
        
         $data = $request->only([
             'name',
-            'cpf',
             'email',
             'password'
         ]);
         $validator = Validator::make($data, [
             'name' => ['required', 'string', 'max:100'],
-            'cpf' => ['required', 'string', 'cpf', 'max:14', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:100', 'unique:users'],
             'password' => ['required', 'string', 'min:4']
         ]);
@@ -72,7 +70,6 @@ class UserController extends Controller
         
         $user = new User;
         $user->name = $data['name'];
-        $user->cpf = $data['cpf'];
         $user->email = $data['email'];
         $user->password = Hash::make($data['password']);
         $user->save();

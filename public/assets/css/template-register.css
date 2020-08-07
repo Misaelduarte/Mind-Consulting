@@ -1,0 +1,28 @@
+  * {
+    font-family: 'Calibri';
+  }
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  background-color: #ccc;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.area-form {
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.senha-span {
+  color: #777;
+  font-size: 13px;
+}

@@ -20,6 +20,7 @@ class HomeController extends Controller
         return $color;
     }
 
+    // O usuario precisa estar logado
     public function __construct() {
         $this->middleware('auth');
     }

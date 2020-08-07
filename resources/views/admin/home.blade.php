@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-6">
         <form method="GET">
-            <select onChange="this.form.submit()" name="interval" class="float-md-right">
+            <select onChange="this.form.submit();" name="interval" class="float-md-right">
                 <option {{$dateInterval==30?'selected="selected"':''}} value="30">Últimos 30 dias</option>
                 <option {{$dateInterval==60?'selected="selected"':''}} value="60">Últimos 2 meses</option>
                 <option {{$dateInterval==90?'selected="selected"':''}} value="90">Últimos 3 meses</option>

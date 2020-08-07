@@ -1,0 +1,15 @@
+.row .l-1{
+  background-color:	#00BFFF;
+}
+
+.row .l-1:hover{
+  background-color: #29acd8;
+} 
+
+.row .l-2{
+  background-color:#48D1CC;
+}
+
+.row .l-2:hover{
+  background-color:#33c5c0;
+} 

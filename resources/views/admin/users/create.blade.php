@@ -2,7 +2,16 @@
 
 @section('title', 'Novo Usuário')
     
-@section('content_header')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  @section('content_header')
     <h1>Novo Usuário</h1>
 @endsection
 
@@ -35,7 +44,7 @@
       <label class="col-sm-2 col-form-label">CPF</label>
 
           <div class="col-sm-10">
-            <input type="text" name="cpf" value="{{ old('cpf') }}" class="form-control @error('cpf') is-invalid @enderror">
+            <input type="text" name="cpf" id="inputCpf" value="{{ old('cpf') }}" class="form-control @error('cpf') is-invalid @enderror">
           </div>
     </div>
     <div class="form-group row">
@@ -62,10 +71,7 @@
 </form>
 </div>
 </div>
-  
-@endsection
 
-@section('js')
 <script src="https://unpkg.com/imask"></script>
 <script>
     IMask(
@@ -73,4 +79,5 @@
         {mask: '000.000.000-00'}
     );
 </script>
-@endsection
+</body>
+</html>
