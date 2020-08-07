@@ -126,17 +126,14 @@ class UserController extends Controller
         if($user) {
             $data = $request->only([
                 'name',
-                'cpf',
                 'email',
                 'password'
             ]);
             $validator = Validator::make([
                 'name' => $data['name'],
-                'cpf' => $data['cpf'],
                 'email' => $data['email']
             ], [
                 'name' => ['required', 'string', 'max:100'],
-                'cpf' => ['required', 'string', 'cpf', 'max:14'],
                 'email' => ['required', 'string', 'email', 'max:100']
             ]);
 
@@ -156,21 +153,7 @@ class UserController extends Controller
                     ]));
                 }
             }
-
-             // Verificando se o cpf foi alterado
-             if($user->cpf != $data['cpf']) {
-                // Verificando se o novo cpf já existe
-                $hasCpf = User::where('cpf', $data['cpf'])->get();
-                 // Se não existir cpf, sera alterado
-                if(count($hasCpf) === 0) {
-                    $user->cpf = $data['cpf'];
-                } else {
-                    $validator->errors()->add('cpf', __('validation.unique', [
-                        'attribute' => 'cpf'
-                    ]));
-                }
-            }
-
+            
             // Verificando se o usuário digitou senha
             if(!empty($data['password'])) {
                 if(strlen($data['password']) >= 4) {
