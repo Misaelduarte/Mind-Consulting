@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', 'Site\HomeController@index');
-
 // Grupo de rotas para o painel administrativo
 Route::prefix('painel')->group(function() {
     Route::get('/', 'Admin\HomeController@index')->name('admin');
